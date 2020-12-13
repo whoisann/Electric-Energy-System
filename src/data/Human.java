@@ -3,7 +3,14 @@ package data;
 public class Human {
     private int initialBudget;
     private int id;
-    private boolean isBankrupt;
+    private boolean isBankrupt = false;
+
+    public Human(int id, int initialBudget) {
+        this.id = id;
+        this.initialBudget = initialBudget;
+    }
+
+    public Human() {}
 
     public int getInitialBudget() {
         return initialBudget;

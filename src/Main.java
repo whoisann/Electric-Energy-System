@@ -29,7 +29,7 @@ public class Main {
             Consumer consumer = (Consumer) HumanFactory.create("consumer");
             assert consumer != null;
             consumer.setConsumer(inputConsumer.getId(), inputConsumer.getMonthlyIncome(),
-                    inputConsumer.getInitialBudget());
+                    inputConsumer.getInitialBudget(), null);
             consumers.add(consumer);
         }
 
@@ -41,9 +41,10 @@ public class Main {
             assert distributor != null;
             distributor.setDistributor(inputDistributor.getId(), inputDistributor.getContractLength(),
                     inputDistributor.getInitialBudget(), inputDistributor.getInitialInfrastructureCost(),
-                    inputDistributor.getInitialProductionCost());
+                    inputDistributor.getInitialProductionCost(), new ArrayList<>());
             distributors.add(distributor);
         }
+
 
     }
 }
