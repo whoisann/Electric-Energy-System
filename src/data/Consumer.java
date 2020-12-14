@@ -1,6 +1,6 @@
 package data;
 
-public class Consumer extends Human {
+public final class Consumer extends Human {
     private int id;
     private int monthlyIncome;
     private int initialBudget;
@@ -10,9 +10,14 @@ public class Consumer extends Human {
     private Distributor currentDistributor = null;
     private Distributor debtDistributor;
 
-    public Consumer() {}
+    public Consumer() {
+    }
 
-    public void setConsumer(int id, int monthlyIncome, int initialBudget, Contract currentContract) {
+    /**
+     * role of constructor
+     */
+    public void setConsumer(final int id, final int monthlyIncome, final int initialBudget,
+                            final Contract currentContract) {
         this.id = id;
         this.monthlyIncome = monthlyIncome;
         this.initialBudget = initialBudget;
@@ -79,8 +84,8 @@ public class Consumer extends Human {
     }
 
     public void payTaxes() {
-        if(!debt) {
-            if(initialBudget - currentContract.getPrice() >= 0) {
+        if (!debt) {
+            if (initialBudget - currentContract.getPrice() >= 0) {
                 initialBudget = initialBudget - currentContract.getPrice();
                 currentDistributor.receiveMoney(currentContract.getPrice());
             } else {
@@ -98,7 +103,8 @@ public class Consumer extends Human {
                 this.setBankrupt(true);
             }
         }
-        currentContract.setRemainedContractMonths(currentContract.getRemainedContractMonths() - 1);
+        currentContract.setRemainedContractMonths(
+                currentContract.getRemainedContractMonths() - 1);
     }
 
 }

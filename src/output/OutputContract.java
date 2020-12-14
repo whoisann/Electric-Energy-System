@@ -5,7 +5,8 @@ public class OutputContract {
     private int price;
     private int remainedContractMonths;
 
-    public OutputContract() {}
+    public OutputContract() {
+    }
 
     public OutputContract(int consumerId, int price, int remainedContractMonths) {
         this.consumerId = consumerId;

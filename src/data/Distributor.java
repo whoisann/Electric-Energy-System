@@ -11,7 +11,8 @@ public class Distributor extends Human {
     private ArrayList<Contract> contracts;
     private long totalTaxes;
 
-    public Distributor() {}
+    public Distributor() {
+    }
 
     public void setDistributor(int id, int contractLength, int initialBudget,
                                int initialInfrastructureCost, int initialProductionCost,
@@ -79,7 +80,7 @@ public class Distributor extends Human {
         long profit;
         profit = Math.round(Math.floor(0.2 * initialProductionCost));
         if (contracts.size() != 0) {
-            contractPrice =  Math.round(Math.floor((double) initialInfrastructureCost / contracts.size())
+            contractPrice = Math.round(Math.floor((double) initialInfrastructureCost / contracts.size())
                     + initialProductionCost + profit);
         } else {
             contractPrice = initialInfrastructureCost + initialProductionCost + profit;

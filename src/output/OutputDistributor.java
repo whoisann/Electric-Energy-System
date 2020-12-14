@@ -10,7 +10,8 @@ public class OutputDistributor {
     private boolean isBankrupt;
     private ArrayList<OutputContract> contracts;
 
-    public OutputDistributor() {}
+    public OutputDistributor() {
+    }
 
     public OutputDistributor(int id, int budget, boolean isBankrupt, ArrayList<OutputContract> contracts) {
         this.id = id;
@@ -34,7 +35,8 @@ public class OutputDistributor {
     public void setBudget(int budget) {
         this.budget = budget;
     }
-   @JsonProperty("isBankrupt")
+
+    @JsonProperty("isBankrupt")
     public boolean isBankrupt() {
         return isBankrupt;
     }

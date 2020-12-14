@@ -10,7 +10,8 @@ public class Human {
         this.initialBudget = initialBudget;
     }
 
-    public Human() {}
+    public Human() {
+    }
 
     public int getInitialBudget() {
         return initialBudget;

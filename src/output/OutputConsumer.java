@@ -13,7 +13,8 @@ public class OutputConsumer {
         this.budget = budget;
     }
 
-    public OutputConsumer() {}
+    public OutputConsumer() {
+    }
 
     public int getId() {
         return id;
@@ -22,6 +23,7 @@ public class OutputConsumer {
     public void setId(int id) {
         this.id = id;
     }
+
     @JsonProperty("isBankrupt")
     public boolean isBankrupt() {
         return isBankrupt;
