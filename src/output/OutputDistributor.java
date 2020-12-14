@@ -1,5 +1,7 @@
 package output;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.ArrayList;
 
 public class OutputDistributor {
@@ -7,6 +9,15 @@ public class OutputDistributor {
     private int budget;
     private boolean isBankrupt;
     private ArrayList<OutputContract> contracts;
+
+    public OutputDistributor() {}
+
+    public OutputDistributor(int id, int budget, boolean isBankrupt, ArrayList<OutputContract> contracts) {
+        this.id = id;
+        this.budget = budget;
+        this.isBankrupt = isBankrupt;
+        this.contracts = contracts;
+    }
 
     public int getId() {
         return id;
@@ -23,7 +34,7 @@ public class OutputDistributor {
     public void setBudget(int budget) {
         this.budget = budget;
     }
-
+   @JsonProperty("isBankrupt")
     public boolean isBankrupt() {
         return isBankrupt;
     }

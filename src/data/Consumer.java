@@ -7,7 +7,7 @@ public class Consumer extends Human {
     private Contract currentContract;
     private boolean debt = false;
     private int debtValue;
-    private Distributor currentDistributor;
+    private Distributor currentDistributor = null;
     private Distributor debtDistributor;
 
     public Consumer() {}
@@ -63,8 +63,10 @@ public class Consumer extends Human {
     public String toString() {
         return "Consumers{"
                 + "id=" + id
+                + ", bankrupt=" + isBankrupt()
                 + ", monthlyIncome=" + monthlyIncome
                 + ", initialBudget=" + initialBudget
+                + ", contracts= " + currentContract
                 + '}';
     }
 

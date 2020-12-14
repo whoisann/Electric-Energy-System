@@ -5,6 +5,14 @@ public class OutputContract {
     private int price;
     private int remainedContractMonths;
 
+    public OutputContract() {}
+
+    public OutputContract(int consumerId, int price, int remainedContractMonths) {
+        this.consumerId = consumerId;
+        this.price = price;
+        this.remainedContractMonths = remainedContractMonths;
+    }
+
     public int getConsumerId() {
         return consumerId;
     }

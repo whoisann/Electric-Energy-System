@@ -6,22 +6,22 @@ import input.InputDistributor;
 import java.util.ArrayList;
 
 public class Output {
-    private ArrayList<InputConsumer> consumers;
-    private ArrayList<InputDistributor> distributors;
+    private ArrayList<OutputConsumer> consumers;
+    private ArrayList<OutputDistributor> distributors;
 
-    public ArrayList<InputConsumer> getConsumers() {
+    public ArrayList<OutputConsumer> getConsumers() {
         return consumers;
     }
 
-    public void setConsumers(ArrayList<InputConsumer> consumers) {
+    public void setConsumers(ArrayList<OutputConsumer> consumers) {
         this.consumers = consumers;
     }
 
-    public ArrayList<InputDistributor> getDistributors() {
+    public ArrayList<OutputDistributor> getDistributors() {
         return distributors;
     }
 
-    public void setDistributors(ArrayList<InputDistributor> distributors) {
+    public void setDistributors(ArrayList<OutputDistributor> distributors) {
         this.distributors = distributors;
     }
 
