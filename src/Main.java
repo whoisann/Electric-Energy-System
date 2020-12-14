@@ -1,5 +1,6 @@
 import com.fasterxml.jackson.databind.ObjectMapper;
 import data.*;
+import game.Simulation;
 import input.Input;
 import input.InputConsumer;
 import input.InputDistributor;

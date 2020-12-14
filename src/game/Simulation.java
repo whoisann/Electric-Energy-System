@@ -1,3 +1,5 @@
+package game;
+
 import data.Consumer;
 import data.Contract;
 import data.Distributor;
@@ -49,7 +51,7 @@ public class Simulation {
                     Contract contract = new Contract(consumer.getId(), (int) lowestPriceDistributor.getContractPrice(),
                             lowestPriceDistributor.getContractLength());
                     consumer.setCurrentContract(contract);
-                    consumer.setCurrentDistribuitor(lowestPriceDistributor);
+                    consumer.setCurrentDistributor(lowestPriceDistributor);
                     lowestPriceDistributor.getContracts().add(contract);
                 }
             }
@@ -75,7 +77,7 @@ public class Simulation {
     public static void removeBankrupt(ArrayList<Consumer> consumers) {
         for (Consumer consumer : consumers) {
             if (consumer.isBankrupt()) {
-                consumer.getCurrentDistribuitor().getContracts().removeIf(contract ->
+                consumer.getCurrentDistributor().getContracts().removeIf(contract ->
                         contract.getConsumerId() == consumer.getId());
             }
         }

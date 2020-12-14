@@ -1,13 +1,14 @@
 package data;
 
-public class HumanFactory {
+public final class HumanFactory {
     private static HumanFactory instance = null;
 
-    private HumanFactory() {
+    private HumanFactory() { }
 
-    }
-
-    public static Human create(String human) {
+    /**
+     * Create the consumers and distributors
+     */
+    public static Human create(final String human) {
         switch (human) {
             case "consumer" -> {
                 return new Consumer();
@@ -21,6 +22,9 @@ public class HumanFactory {
         }
     }
 
+    /**
+     * Get instance
+     */
     public static HumanFactory getInstance() {
         if (instance == null) {
             instance = new HumanFactory();
