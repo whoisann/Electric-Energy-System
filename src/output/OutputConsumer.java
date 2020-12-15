@@ -2,12 +2,12 @@ package output;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class OutputConsumer {
+public final class OutputConsumer {
     private int id;
     private boolean isBankrupt;
     private int budget;
 
-    public OutputConsumer(int id, boolean isBankrupt, int budget) {
+    public OutputConsumer(final int id, final boolean isBankrupt, final int budget) {
         this.id = id;
         this.isBankrupt = isBankrupt;
         this.budget = budget;
@@ -20,7 +20,7 @@ public class OutputConsumer {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(final int id) {
         this.id = id;
     }
 
@@ -29,7 +29,7 @@ public class OutputConsumer {
         return isBankrupt;
     }
 
-    public void setBankrupt(boolean bankrupt) {
+    public void setBankrupt(final boolean bankrupt) {
         isBankrupt = bankrupt;
     }
 
@@ -37,14 +37,13 @@ public class OutputConsumer {
         return budget;
     }
 
-    public void setBudget(int budget) {
+    public void setBudget(final int budget) {
         this.budget = budget;
     }
 
     @Override
     public String toString() {
-        return "Consumers{" +
-                "id=" + id + ", isBankrupt=" + isBankrupt
+        return "Consumers{" + "id=" + id + ", isBankrupt=" + isBankrupt
                 + ", budget=" + budget + '}';
     }
 }

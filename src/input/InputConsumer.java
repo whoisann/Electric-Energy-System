@@ -1,6 +1,6 @@
 package input;
 
-public class InputConsumer {
+public final class InputConsumer {
     private int id;
     private int monthlyIncome;
     private int initialBudget;
@@ -9,7 +9,7 @@ public class InputConsumer {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(final int id) {
         this.id = id;
     }
 
@@ -17,7 +17,7 @@ public class InputConsumer {
         return monthlyIncome;
     }
 
-    public void setMonthlyIncome(int monthlyIncome) {
+    public void setMonthlyIncome(final int monthlyIncome) {
         this.monthlyIncome = monthlyIncome;
     }
 
@@ -25,7 +25,7 @@ public class InputConsumer {
         return initialBudget;
     }
 
-    public void setInitialBudget(int initialBudget) {
+    public void setInitialBudget(final int initialBudget) {
         this.initialBudget = initialBudget;
     }
 

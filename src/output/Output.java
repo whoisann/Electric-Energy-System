@@ -1,11 +1,8 @@
 package output;
 
-import input.InputConsumer;
-import input.InputDistributor;
-
 import java.util.ArrayList;
 
-public class Output {
+public final class Output {
     private ArrayList<OutputConsumer> consumers;
     private ArrayList<OutputDistributor> distributors;
 
@@ -13,7 +10,7 @@ public class Output {
         return consumers;
     }
 
-    public void setConsumers(ArrayList<OutputConsumer> consumers) {
+    public void setConsumers(final ArrayList<OutputConsumer> consumers) {
         this.consumers = consumers;
     }
 
@@ -21,7 +18,7 @@ public class Output {
         return distributors;
     }
 
-    public void setDistributors(ArrayList<OutputDistributor> distributors) {
+    public void setDistributors(final ArrayList<OutputDistributor> distributors) {
         this.distributors = distributors;
     }
 

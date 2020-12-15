@@ -1,6 +1,6 @@
 package input;
 
-public class InputCostsChange {
+public final class InputCostsChange {
     private int id;
     private int infrastructureCost;
     private int productionCost;
@@ -9,7 +9,7 @@ public class InputCostsChange {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(final int id) {
         this.id = id;
     }
 
@@ -17,7 +17,7 @@ public class InputCostsChange {
         return infrastructureCost;
     }
 
-    public void setInfrastructureCost(int infrastructureCost) {
+    public void setInfrastructureCost(final int infrastructureCost) {
         this.infrastructureCost = infrastructureCost;
     }
 
@@ -25,14 +25,14 @@ public class InputCostsChange {
         return productionCost;
     }
 
-    public void setProductionCost(int productionCost) {
+    public void setProductionCost(final int productionCost) {
         this.productionCost = productionCost;
     }
 
     @Override
     public String toString() {
-        return "InputCostsChange{" +
-                "id=" + id + ", infrastructureCost=" + infrastructureCost
+        return "InputCostsChange{"
+                + "id=" + id + ", infrastructureCost=" + infrastructureCost
                 + ", productionCost=" + productionCost + '}';
     }
 }

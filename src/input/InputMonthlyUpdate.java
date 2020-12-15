@@ -2,7 +2,7 @@ package input;
 
 import java.util.ArrayList;
 
-public class InputMonthlyUpdate {
+public final class InputMonthlyUpdate {
     private ArrayList<InputConsumer> newConsumers;
     private ArrayList<InputCostsChange> costsChanges;
 
@@ -10,7 +10,7 @@ public class InputMonthlyUpdate {
         return newConsumers;
     }
 
-    public void setNewConsumers(ArrayList<InputConsumer> newConsumers) {
+    public void setNewConsumers(final ArrayList<InputConsumer> newConsumers) {
         this.newConsumers = newConsumers;
     }
 
@@ -18,7 +18,7 @@ public class InputMonthlyUpdate {
         return costsChanges;
     }
 
-    public void setCostsChanges(ArrayList<InputCostsChange> costsChanges) {
+    public void setCostsChanges(final ArrayList<InputCostsChange> costsChanges) {
         this.costsChanges = costsChanges;
     }
 

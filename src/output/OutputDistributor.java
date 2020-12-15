@@ -4,16 +4,16 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
 
-public class OutputDistributor {
+public final class OutputDistributor {
     private int id;
     private int budget;
     private boolean isBankrupt;
     private ArrayList<OutputContract> contracts;
 
-    public OutputDistributor() {
-    }
+    public OutputDistributor() { }
 
-    public OutputDistributor(int id, int budget, boolean isBankrupt, ArrayList<OutputContract> contracts) {
+    public OutputDistributor(final int id, final int budget, final boolean isBankrupt,
+                             final ArrayList<OutputContract> contracts) {
         this.id = id;
         this.budget = budget;
         this.isBankrupt = isBankrupt;
@@ -24,7 +24,7 @@ public class OutputDistributor {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(final int id) {
         this.id = id;
     }
 
@@ -32,7 +32,7 @@ public class OutputDistributor {
         return budget;
     }
 
-    public void setBudget(int budget) {
+    public void setBudget(final int budget) {
         this.budget = budget;
     }
 
@@ -41,7 +41,7 @@ public class OutputDistributor {
         return isBankrupt;
     }
 
-    public void setBankrupt(boolean bankrupt) {
+    public void setBankrupt(final boolean bankrupt) {
         isBankrupt = bankrupt;
     }
 
@@ -49,14 +49,13 @@ public class OutputDistributor {
         return contracts;
     }
 
-    public void setContracts(ArrayList<OutputContract> contracts) {
+    public void setContracts(final ArrayList<OutputContract> contracts) {
         this.contracts = contracts;
     }
 
     @Override
     public String toString() {
-        return "Distributors{" +
-                "id=" + id
+        return "Distributors{" + "id=" + id
                 + ", budget=" + budget
                 + ", isBankrupt=" + isBankrupt
                 + ", contracts=" + contracts + '}';

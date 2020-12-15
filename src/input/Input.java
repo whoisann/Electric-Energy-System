@@ -2,24 +2,24 @@ package input;
 
 import java.util.ArrayList;
 
-public class Input {
-    private int NumberOfTurns;
+public final class Input {
+    private int numberOfTurns;
     private InputInitialData initialData;
     private ArrayList<InputMonthlyUpdate> monthlyUpdates;
 
     public int getNumberOfTurns() {
-        return NumberOfTurns;
+        return numberOfTurns;
     }
 
-    public void setNumberOfTurns(int numberOfTurns) {
-        NumberOfTurns = numberOfTurns;
+    public void setNumberOfTurns(final int numberOfTurns) {
+        this.numberOfTurns = numberOfTurns;
     }
 
     public InputInitialData getInitialData() {
         return initialData;
     }
 
-    public void setInitialData(InputInitialData initialData) {
+    public void setInitialData(final InputInitialData initialData) {
         this.initialData = initialData;
     }
 
@@ -27,13 +27,13 @@ public class Input {
         return monthlyUpdates;
     }
 
-    public void setMonthlyUpdates(ArrayList<InputMonthlyUpdate> monthlyUpdates) {
+    public void setMonthlyUpdates(final ArrayList<InputMonthlyUpdate> monthlyUpdates) {
         this.monthlyUpdates = monthlyUpdates;
     }
 
     @Override
     public String toString() {
-        return "Input{" + "NumberOfTurns=" + NumberOfTurns
+        return "Input{" + "NumberOfTurns=" + numberOfTurns
                 + ", initialData=" + initialData
                 + ", monthlyUpdates=" + monthlyUpdates
                 + '}';

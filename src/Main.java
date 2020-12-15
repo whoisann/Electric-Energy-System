@@ -1,5 +1,8 @@
 import com.fasterxml.jackson.databind.ObjectMapper;
-import data.*;
+import data.Consumer;
+import data.Contract;
+import data.Distributor;
+import data.HumanFactory;
 import game.Simulation;
 import input.Input;
 import input.InputConsumer;
@@ -13,9 +16,14 @@ import output.OutputDistributor;
 import java.io.File;
 import java.util.ArrayList;
 
-public class Main {
+public final class Main {
 
-    public static void main(String[] args) throws Exception {
+    private Main() { }
+
+    /**
+     * Main function
+     */
+    public static void main(final String[] args) throws Exception {
 
         File fileIn = new File(args[0]);
         File fileOut = new File(args[1]);
@@ -40,12 +48,15 @@ public class Main {
             HumanFactory humanFactory = HumanFactory.getInstance();
             Distributor distributor = (Distributor) HumanFactory.create("distributor");
             assert distributor != null;
-            distributor.setDistributor(inputDistributor.getId(), inputDistributor.getContractLength(),
-                    inputDistributor.getInitialBudget(), inputDistributor.getInitialInfrastructureCost(),
+            distributor.setDistributor(inputDistributor.getId(),
+                    inputDistributor.getContractLength(),
+                    inputDistributor.getInitialBudget(),
+                    inputDistributor.getInitialInfrastructureCost(),
                     inputDistributor.getInitialProductionCost(), new ArrayList<>());
             distributors.add(distributor);
         }
 
+        // simulate every month
         Simulation.simulateMonth(consumers, distributors);
         for (int i = 0; i < input.getNumberOfTurns(); i++) {
             Simulation.monthlyUpdates(i, input, consumers, distributors);
@@ -55,18 +66,27 @@ public class Main {
         ArrayList<OutputConsumer> outputConsumers = new ArrayList<>();
         ArrayList<OutputDistributor> outputDistributors = new ArrayList<>();
 
+        // make the output consumers
         for (Consumer consumer : consumers) {
-            OutputConsumer outputConsumer = new OutputConsumer(consumer.getId(), consumer.isBankrupt(), consumer.getInitialBudget());
+            OutputConsumer outputConsumer
+                    = new OutputConsumer(consumer.getId(),
+                    consumer.isBankrupt(), consumer.getInitialBudget());
             outputConsumers.add(outputConsumer);
         }
 
         for (Distributor distributor : distributors) {
+            // make the output distributors' contracts
             ArrayList<OutputContract> outputContracts = new ArrayList<>();
             for (Contract contract : distributor.getContracts()) {
-                OutputContract outputContract = new OutputContract(contract.getConsumerId(), contract.getPrice(), contract.getRemainedContractMonths());
+                OutputContract outputContract
+                        = new OutputContract(contract.getConsumerId(),
+                        contract.getPrice(), contract.getRemainedContractMonths());
                 outputContracts.add(outputContract);
             }
-            OutputDistributor outputDistributor = new OutputDistributor(distributor.getId(), distributor.getInitialBudget(), distributor.isBankrupt(), outputContracts);
+            // make the output distributors
+            OutputDistributor outputDistributor
+                    = new OutputDistributor(distributor.getId(),
+                    distributor.getInitialBudget(), distributor.isBankrupt(), outputContracts);
             outputDistributors.add(outputDistributor);
         }
 
