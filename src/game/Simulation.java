@@ -27,6 +27,7 @@ public final class Simulation {
         ArrayList<InputConsumer> inputConsumers
                 = input.getMonthlyUpdates().get(month).getNewConsumers();
 
+        // get the consumers
         for (InputConsumer inputConsumer : inputConsumers) {
             HumanFactory humanFactory = HumanFactory.getInstance();
             Consumer consumer = (Consumer) HumanFactory.create(Constants.CONSUMER);

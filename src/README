@@ -1,0 +1,41 @@
+# Voicu Ana-Nicoleta 322CA
+
+Implementarea este impartita in pachetele common, data, game, input si output.
+
+- - - common - - -
+
+In pachetul common avem o singura clasa pentru constantele folosite in cod.
+
+- - - data - - -
+
+In pachetul data avem clasele Consumer si Distributor care mostenesc clasa Human, clasa
+Contract in care avem caracteristicile unui contract si design pattern-urile Singleton
+si Factory.
+
+In clasa Consumer avem metode pentru a verifica daca un contract e expirat, pentru a calcula
+salariul unui consumer si pentru a calcula taxele, luand in considerare daca un consumer
+trebuie sa plateasca si datoriile.
+
+In clasa Distributor avem metode pentru a calcula pretul contractului dupa pretul de productie
+si de infrastructura, pentru a calcula distributorul care are contractul cel mai mic, pentru
+a calcula taxele unui distribuitor, a le plati si pentru a-si incasa banii.
+
+- - - game - - -
+
+In pachetul game vom avea o singura clasa unde incepem simularea, avand metode pentru a updata
+costurile si consumatorii, pentru a updata contractele, pentru ca un consumator sa isi aleaga
+distribuitorul cu pretul contractului cel mai mic, pentru a calula cheltuielile lunare, pentru ca
+un consumator sa plateasca taxele si pentru a scoate din joc consumatorii faliti.
+
+- - - input - - -
+
+In pachetul input avem toate clasele pentru a extrage datele din fisierele json.
+
+- - - output - - -
+
+In pachetul output avem toate clasele cu datele pe care le vom scrie in fisierul de iesire.
+
+- - - Main - - -
+
+Ne cream bazele de date pentru distributori si consumatori, simulam fiecare luna pana la numarul
+final de ture si scriem in fisierul de output consumatorii, distribuitorii si contractele finale.

@@ -88,6 +88,7 @@ public final class Distributor extends Human {
         long profit;
         profit = Math.round(Math.floor(Constants.MAGIC2 * initialProductionCost));
         if (contracts.size() != 0) {
+            // calculate contract price
             contractPrice = Math.round(Math.floor((double) initialInfrastructureCost
                     / contracts.size())
                     + initialProductionCost + profit);
@@ -104,12 +105,15 @@ public final class Distributor extends Human {
 
         ArrayList<Distributor> copy = new ArrayList<>(distributors);
 
+        // sort the distributors list after the contract price
         copy.sort((d1, d2) -> {
             return (int) (d1.contractPrice - d2.contractPrice);
         });
 
+        // remove the bankrupt distributors
         copy.removeIf(Human::isBankrupt);
 
+        // get the lowest price distributor
         if (copy.size() > 0) {
             return copy.get(0);
         }
@@ -129,6 +133,7 @@ public final class Distributor extends Human {
      */
     public void payTaxes() {
         this.setInitialBudget((int) (this.getInitialBudget() - totalTaxes));
+        // verify if a distributor is bankrupt
         if (getInitialBudget() < 0) {
             this.setBankrupt(true);
         }

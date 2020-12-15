@@ -78,7 +78,7 @@ public final class Consumer extends Human {
     }
 
     /**
-     * Get the expired contracts
+     * See if a contract is expired
      */
     public boolean expiredContract() {
         return currentContract.getRemainedContractMonths() == 0;
